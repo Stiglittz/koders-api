@@ -1,6 +1,6 @@
 # Proyecto de Backend
 
-Este es un proyecto donde usamos una API para crear usuarios y dales un inicio de sesion para que puedas crear
+Este es un proyecto donde usamos una API para crear usuarios y darles un inicio de sesion el que puedan crear
 posts, editarlos o elimarlos.
 
 ## Configuración
