@@ -58,7 +58,7 @@ async function create(userData) {
 
 async function getById(id) {
     const user = await Users.findById(id)/* .populate("generation") */
-    return user
+    /* return user */
  /*
 
 
