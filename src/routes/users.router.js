@@ -22,7 +22,7 @@ router.get("/", async (req, res) =>  {
 })
 
 // POST /users
-router.post("/", async (req, res) => {
+router.post("/register", async (req, res) => {
     try {
         const userCreated = await userUsecase.create(req.body)
 
