@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const modelName = "users"
+const modelName = "Users"
 
 const schema = new mongoose.Schema({
     firstName: {

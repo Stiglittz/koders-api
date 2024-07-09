@@ -24,13 +24,15 @@ router.get("/", async (req, res) =>  {
 // POST /users
 router.post("/register", async (req, res) => {
     try {
+        console.log('Request body:', req.body);
         const userCreated = await userUsecase.create(req.body)
-
+        console.log('User created:', userCreated);
         res.json({
             succes: true,
             data: { user: userCreated },
         })
     } catch (error) {
+        console.error('Error during user registration:', error);
         res.status(error.status || 500)
         res.json({
             success: false,
