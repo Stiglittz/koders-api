@@ -10,9 +10,9 @@ async function createPost(postData, userId) {
 
 async function getAllPosts(search) {
     if(!search) {
-        return await Posts.find()
+        return await Posts.find().populate('user')
     }
-    const allPosts = await Posts.find({title: {$regex: search, $options: 'i'}})
+    const allPosts = await Posts.find({title: {$regex: search, $options: 'i'}}).populate('user')
 
     if (allPosts.length === 0) {
         throw createHttpError(404, 'Post not found')

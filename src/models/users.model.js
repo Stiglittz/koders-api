@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const modelName = "Users"
+const modelName = "users"
 
 const schema = new mongoose.Schema({
     firstName: {
@@ -14,6 +14,10 @@ const schema = new mongoose.Schema({
         required: false,
         maxLength: 100,
     },
+    avatar: {
+        type: String,
+        required: false,
+      },
     email: {
         type: String,
         required: true,

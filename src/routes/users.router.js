@@ -22,11 +22,10 @@ router.get("/", async (req, res) =>  {
 })
 
 // POST /users
-router.post("/register", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
-        console.log('Request body:', req.body);
+
         const userCreated = await userUsecase.create(req.body)
-        console.log('User created:', userCreated);
         res.json({
             succes: true,
             data: { user: userCreated },

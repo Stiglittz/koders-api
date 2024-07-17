@@ -12,7 +12,7 @@ const schema = new mongoose.Schema({
     image: {
         type: String,
         required: false,
-        maxLength: 100,
+        maxLength: 500,
     },
     body: {
         type: String,
@@ -20,9 +20,9 @@ const schema = new mongoose.Schema({
         minLength: 1,
         maxLength: 1000,
       },
-    user: {
+    user: { // Author de Post
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "users",
     },
     created_at: {
       type: Date,
@@ -32,6 +32,17 @@ const schema = new mongoose.Schema({
       type: Date,
       default: Date.now,
     },
+    tags: [{
+      type: String,
+      enum: [
+        'webdev', 'javascript', 'beginners', 'programming', 'tutorial',
+        'react', 'python', 'devops', 'ai', 'productivity',
+        'aws', 'opensource', 'node', 'learning', 'typescript',
+        'css', 'java', 'news', 'career', 'linux',
+        'html', 'database', 'machinelearning', 'security', 'discuss',
+        'api', 'testing', 'frontend', 'php', 'design'
+      ]
+    }],
 })
 
 module.exports = mongoose.model(modelName, schema)

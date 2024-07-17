@@ -8,10 +8,12 @@ router.post('/', auth, async (req, res) => {
     try {
         const postData = {
             ...req.body,
-            user: req.user._id
+            user: req.user._id,
         }
 
-        const createdPost = await postUsecase.createPost(postData);
+        let createdPost = await postUsecase.createPost(postData);
+        createdPost =  await createdPost.populate('user', 'firstName');
+ 
         res.json({
             success: true,
             data: { createdPost }
